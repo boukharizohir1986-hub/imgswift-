@@ -97,5 +97,28 @@
     // (soft redirect, gives user time to choose)
     // setTimeout(() => { window.location.href = '/'; }, 15000);
   </script>
+<script>
+(function() {
+  var path = window.location.pathname;
+
+  var routes = {
+    '/png-to-webp': '#png-to-webp',
+    '/png-to-jpg': '#png-to-jpg',
+    '/jpg-to-png': '#jpg-to-png',
+    '/jpg-to-webp': '#jpg-to-webp',
+    '/webp-to-jpg': '#webp-to-jpg',
+    '/webp-to-png': '#webp-to-png',
+    '/compress-image': '#compress',
+    '/pdf-to-image': '#pdf',
+    '/crop-image': '#crop',
+    '/resize-image': '#resize',
+    '/remove-exif-data': '#remove-exif'
+  };
+
+  if (routes[path]) {
+    window.location.replace('/' + routes[path]);
+  }
+})();
+</script>
 </body>
 </html>
